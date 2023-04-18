@@ -43,6 +43,11 @@ class StockServiceTest {
         assertThat(stock.getQuantity()).isEqualTo(99);
     }
 
+    /**
+     * Race Condition으로 100개 모두 소진되지 않음
+     * - 같은 상태의 수량일때 2개 이상의 쓰레드가 동시에 동작하여
+     *   결과적으로 수량 하나만 내려가게 됨
+     */
     @Test
     public void 동시에_100개의_요청() throws InterruptedException {
         int threadCount = 100;
