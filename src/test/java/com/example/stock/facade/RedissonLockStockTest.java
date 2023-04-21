@@ -56,7 +56,6 @@ class RedissonLockStockTest {
 
         final Stock stock = stockRepository.findById(1L).orElseThrow();
         assertThat(stock.getQuantity()).isEqualTo(0L);
-
     }
 
 }
